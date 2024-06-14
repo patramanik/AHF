@@ -5,7 +5,7 @@
         <div class="register-box">
             <div class="card card-outline card-primary">
                 <div class="card-header text-center">
-                    <a href="../../index2.html" class="h1"><b>Admin Registration</b></a>
+                    <a href="../../index2.html" class="h2"><b>Admin Registration</b></a>
                 </div>
                 <div class="card-body">
 
@@ -65,6 +65,6 @@
                     <a href="login.html" class="text-center">I already have an a account</a>
                 </div>
                 <!-- /.form-box -->
-            </div><!-- /.card -->
+            </div>
         </div>
     @endsection
