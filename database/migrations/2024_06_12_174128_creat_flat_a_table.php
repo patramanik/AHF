@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('flat_no')->unique();
             $table->string('owner_name');
+            $table->string('email');
             $table->float('monthly_rate')->default(1240.00);
             $table->float('maintenance_charges')->default(1000.00);
             $table->float('collection_for_major_maintenance')->default(240.00);
