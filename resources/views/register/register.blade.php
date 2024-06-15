@@ -67,4 +67,6 @@
                 <!-- /.form-box -->
             </div>
         </div>
-    @endsection
+
+    </body>
+@endsection
