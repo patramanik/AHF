@@ -60,7 +60,13 @@ class AuthController extends Controller
             ->withErrors(['email' => 'The provided credentials do not match our records.'])
             ->withInput();
     }
-    public function Dashboard(){
-        return view ('dashboard.dashboard');
+    public function Dashboard()
+    {
+        return view('dashboard.dashboard');
+    }
+    public function Logout()
+    {
+        Auth::logout();
+        return redirect('login')->with('success', 'Logout successful!');
     }
 }

@@ -1,3 +1,7 @@
+@php
+    use Illuminate\Support\Facades\Auth;
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,6 +34,7 @@
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+
     <div class="wrapper">
 
         <!-- Preloader -->
@@ -52,6 +57,16 @@
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="#" class="nav-link">Contact</a>
                 </li>
+                <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <!-- Logout Button -->
+                <li class="nav-item">
+                    <form action="{{ route('logout') }}" method="GET">
+                        @csrf
+                        <button type="submit" class="btn btn-danger">Logout</button>
+                    </form>
+                </li>
+            </ul>
             </ul>
 
             <!-- Right navbar links -->
@@ -113,8 +128,13 @@
                     <div class="image">
                         <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                     </div>
-                    <div class="info">
+                    {{-- <div class="info">
                         <a href="#" class="d-block">Alexander Pierce</a>
+                    </div> --}}
+                    <!-- In your Blade template -->
+                 
+                    <div class="info">
+                        <a href="#" class="d-block">{{ Auth::user()->name }}</a>
                     </div>
                 </div>
 
