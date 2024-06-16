@@ -5,13 +5,20 @@
         <div class="register-box">
             <div class="card card-outline card-primary">
                 <div class="card-header text-center">
-                    <a href="../../index2.html" class="h2"><b>Admin Registration</b></a>
+                    <a href="" class="h2"><b>Admin Registration</b></a>
                 </div>
                 <div class="card-body">
+                    <!-- Success message display -->
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
 
-                    <form action="../../index.html" method="post">
+                    <form action="{{ route('register.submit') }}" method="post">
+                        @csrf
                         <div class="input-group mb-3">
-                            <input type="text" class="form-control" placeholder="Full name">
+                            <input type="text" class="form-control" name="name" placeholder="Full name">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-user"></span>
@@ -19,7 +26,7 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="email" class="form-control" placeholder="Email">
+                            <input type="email" class="form-control" name="email" placeholder="Email">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-envelope"></span>
@@ -27,7 +34,7 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="password" class="form-control" placeholder="Password">
+                            <input type="password" class="form-control" name="password" placeholder="Password">
                             <div class="input-group-append">
                                 <div class="input-group-text">
                                     <span class="fas fa-lock"></span>
@@ -62,9 +69,11 @@
                         </a>
                     </div>
 
-                    <a href="login.html" class="text-center">I already have an a account</a>
+                    <a href="#" class="text-center">I already have an a account</a>
                 </div>
                 <!-- /.form-box -->
             </div>
         </div>
-    @endsection
+
+    </body>
+@endsection
