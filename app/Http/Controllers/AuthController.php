@@ -10,10 +10,12 @@ use Illuminate\Support\Facades\Validator as FacadesValidator;
 
 class AuthController extends Controller
 {
+
     public function Register()
     {
         return view('register.register');
     }
+
     public function RegisterPost(Request $request)
 
     {
@@ -39,6 +41,8 @@ class AuthController extends Controller
     {
         return view('login.login');
     }
+
+
     public function LoginPost(Request $request)
     {
         // Validate the login request
@@ -62,7 +66,7 @@ class AuthController extends Controller
     }
     public function Dashboard()
     {
-        return view('dashboard.dashboard');
+        return view('dashboard');
     }
     public function Logout()
     {
