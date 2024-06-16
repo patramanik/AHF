@@ -315,10 +315,4 @@
         </nav>
         <!-- /.sidebar-menu -->
     </div>
-<<<<<<< HEAD
-    <!-- /.sidebar -->
-=======
-
-
->>>>>>> 47597c194a0db8aa9df452c8b4d1e52a504eb7cb
 </aside>
