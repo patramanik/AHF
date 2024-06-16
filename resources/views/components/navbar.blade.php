@@ -13,7 +13,7 @@
             <a href="#" class="nav-link">Contact</a>
         </li>
         <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
+    {{-- <ul class="navbar-nav ml-auto">
         <!-- Logout Button -->
         <li class="nav-item">
             <form action="{{ route('logout') }}" method="GET">
@@ -21,15 +21,22 @@
                 <button type="submit" class="btn btn-danger">Logout</button>
             </form>
         </li>
-    </ul>
+    </ul> --}}
     </ul>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-    
+
         <li class="nav-item">
             <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                 <i class="fas fa-expand-arrows-alt"></i>
+            </a>
+        </li>
+
+        <li class="nav-item">
+
+            <a class="nav-link"  href="{{ route('logout') }}" role="button">
+                <i class="fas fa-power-off"></i>
             </a>
         </li>
 
