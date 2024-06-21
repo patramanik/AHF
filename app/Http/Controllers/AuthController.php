@@ -60,7 +60,7 @@ class AuthController extends Controller
         }
 
         // Authentication failed
-        return redirect()->route('login')
+        return redirect()->route('login.submit')
             ->withErrors(['email' => 'The provided credentials do not match our records.'])
             ->withInput();
     }
