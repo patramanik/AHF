@@ -76,11 +76,50 @@ class AuthController extends Controller
         $flatD = FlatD::count();
         $count = $flatA + $flatB + $flatC + $flatD;
         return view('dashboard')->with('count', $count);
-       
     }
 
-    public function Flats(){
-        return view ('flats');
+    public function Flats()
+    {
+        return view('flats');
+    }
+    public function FlatsPost(Request $request)
+    {
+
+        // Get the selected flat type from the request
+        $selectedFlat = $request->input('flats'); // Ensure 'flat_type' is the name of your input field
+
+        // Initialize a variable to store the data
+        $flatData = null;
+
+        // Check the selected flat and fetch data accordingly
+        switch ($selectedFlat) {
+            case 'flata':
+                $flatData = FlatA::all(); // Fetch all data from FlatA
+                $selectedFlat= "Flat A";
+                break;
+            case 'flatb':
+                $flatData = FlatB::all(); // Fetch all data from FlatB
+                $selectedFlat= "Flat B";
+                break;
+            case 'flatc':
+                $flatData = FlatC::all(); // Fetch all data from FlatC
+                $selectedFlat= "Flat C";
+                break;
+            case 'flatd':
+                $flatData = FlatD::all(); // Fetch all data from FlatD
+                $selectedFlat= "Flat D";
+                break;
+            default:
+                return response()->json(['error' => 'Invalid flat type selected'], 400); // Handle invalid selection
+        }
+        
+        // Return the data as a JSON response
+        // return response()->json(['data' => $flatData]);
+        return view('flats', ['data' => $flatData,'selectedFlat' => $selectedFlat]);
+        // dd($request->all());
+    
+
+
     }
 
 

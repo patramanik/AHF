@@ -25,4 +25,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [AuthController::class, 'Dashboard'])->name('dashboard');
     Route::get('/logout', [AuthController::class, 'Logout'])->name('logout');
     Route::get('/flats', [AuthController::class, 'Flats'])->name('flats');
+    Route::post('/flats', [AuthController::class, 'FlatsPost'])->name('flats.submit');
 });

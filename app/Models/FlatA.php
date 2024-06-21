@@ -10,7 +10,7 @@ class FlatA extends Model
     use HasFactory;
 
 
-    protected $table = 'flatA';
+    protected $table = 'flata';
 
     protected $fillable =[
         'id',
