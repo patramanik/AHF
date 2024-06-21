@@ -11,7 +11,7 @@ Route::get('/',[AuthController::class, 'Login']);
 
 Route::get('/register', [AuthController::class, 'Register']);
 Route::post('/register', [AuthController::class, 'RegisterPost'])->name('register.submit');
-Route::get('/login', [AuthController::class, 'Login']);
+Route::get('/login', [AuthController::class, 'Login'])->name('login');
 Route::post('/login', [AuthController::class, 'LoginPost'])->name('login.submit');
 // Route::get('/dashboard', [AuthController::class, 'Dashboard']);
 

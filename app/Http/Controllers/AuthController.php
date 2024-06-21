@@ -70,12 +70,13 @@ class AuthController extends Controller
     }
     public function Dashboard()
     {
-        $flatA= FlatA::count();
-        $flatB= FlatB::count();
-        $flatC= FlatC::count();
-        $flatD= FlatD::count();
-        $count= $flatA+$flatB+$flatC+$flatD;
-        return view('dashboard')->with($count);
+        $flatA = FlatA::count();
+        $flatB = FlatB::count();
+        $flatC = FlatC::count();
+        $flatD = FlatD::count();
+        $count = $flatA + $flatB + $flatC + $flatD;
+        return view('dashboard')->with('count', $count);
+       
     }
     public function Logout()
     {
