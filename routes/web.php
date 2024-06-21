@@ -4,7 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/',[AuthController::class, 'Login']);
+Route::get('/', [AuthController::class, 'Login']);
 // Route::get('/', function () {
 //     return view('register');
 // });
@@ -24,4 +24,5 @@ Route::post('/login', [AuthController::class, 'LoginPost'])->name('login.submit'
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [AuthController::class, 'Dashboard'])->name('dashboard');
     Route::get('/logout', [AuthController::class, 'Logout'])->name('logout');
+    Route::get('/flats', [AuthController::class, 'Flats'])->name('flats');
 });

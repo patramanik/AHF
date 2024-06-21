@@ -78,6 +78,13 @@ class AuthController extends Controller
         return view('dashboard')->with('count', $count);
        
     }
+
+    public function Flats(){
+        return view ('flats');
+    }
+
+
+
     public function Logout()
     {
         Auth::logout();
