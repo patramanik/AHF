@@ -9,7 +9,7 @@ class FlatC extends Model
 {
     use HasFactory;
 
-    protected $table = 'flatC';
+    protected $table = 'flatc';
 
     protected $fillable =[
         'id',
