@@ -34,12 +34,7 @@
                             <div class="small-box bg-info">
                                 <div class="inner">
                                     <h3>{{$count}}</h3>
-<<<<<<< HEAD
-                                    <p>All Flates</p>
-=======
-
                                     <p>My Flats</p>
->>>>>>> origin/main
                                 </div>
                                 <div class="icon">
                                     <i class="ion ion-bag"></i>
