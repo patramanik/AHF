@@ -70,21 +70,13 @@ class AuthController extends Controller
     }
     public function Dashboard()
     {
-<<<<<<< HEAD
+
         $flatA= FlatA::count();
         $flatB= FlatB::count();
         $flatC= FlatC::count();
         $flatD= FlatD::count();
         $count= $flatA+$flatB+$flatC+$flatD;
         return view('dashboard')->with('count',$count);
-=======
-        $flatA = FlatA::count();
-        $flatB = FlatB::count();
-        $flatC = FlatC::count();
-        $flatD = FlatD::count();
-        $count = $flatA + $flatB + $flatC + $flatD;
-        return view('dashboard')->with('count', $count);
->>>>>>> origin/main
     }
 
     public function Flats()
@@ -126,8 +118,6 @@ class AuthController extends Controller
         // return response()->json(['data' => $flatData]);
         return view('flats', ['data' => $flatData, 'selectedFlat' => $selectedFlat]);
         // dd($request->all());
-
-
 
     }
 
