@@ -12,7 +12,7 @@ class FlatA extends Model
 
     protected $table = 'flata';
 
-    protected $fillable =[
+    protected $fillable = [
         'id',
         'flat_no',
         'owner_name',
@@ -23,5 +23,4 @@ class FlatA extends Model
         'created_at',
         'updated_at',
     ];
-
 }

@@ -95,29 +95,29 @@ class AuthController extends Controller
         switch ($selectedFlat) {
             case 'flata':
                 $flatData = FlatA::all(); // Fetch all data from FlatA
-                $selectedFlat= "Flat A";
+                $selectedFlat = "Flat A";
                 break;
             case 'flatb':
                 $flatData = FlatB::all(); // Fetch all data from FlatB
-                $selectedFlat= "Flat B";
+                $selectedFlat = "Flat B";
                 break;
             case 'flatc':
                 $flatData = FlatC::all(); // Fetch all data from FlatC
-                $selectedFlat= "Flat C";
+                $selectedFlat = "Flat C";
                 break;
             case 'flatd':
                 $flatData = FlatD::all(); // Fetch all data from FlatD
-                $selectedFlat= "Flat D";
+                $selectedFlat = "Flat D";
                 break;
             default:
                 return response()->json(['error' => 'Invalid flat type selected'], 400); // Handle invalid selection
         }
-        
+
         // Return the data as a JSON response
         // return response()->json(['data' => $flatData]);
-        return view('flats', ['data' => $flatData,'selectedFlat' => $selectedFlat]);
+        return view('flats', ['data' => $flatData, 'selectedFlat' => $selectedFlat]);
         // dd($request->all());
-    
+
 
 
     }
