@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\FlatA;
+use App\Models\FlatB;
+use App\Models\FlatC;
+use App\Models\FlatD;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -66,7 +70,12 @@ class AuthController extends Controller
     }
     public function Dashboard()
     {
-        return view('dashboard');
+        $flatA= FlatA::count();
+        $flatB= FlatB::count();
+        $flatC= FlatC::count();
+        $flatD= FlatD::count();
+        $count= $flatA+$flatB+$flatC+$flatD;
+        return view('dashboard')->with($count);
     }
     public function Logout()
     {
