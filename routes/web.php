@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\EmailControllers;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,3 +28,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/flats', [AuthController::class, 'Flats'])->name('flats');
     Route::post('/flats', [AuthController::class, 'FlatsPost'])->name('flats.submit');
 });
+
+ Route::get('/send-email', [EmailControllers::class, 'sendPaymentEmail']);
