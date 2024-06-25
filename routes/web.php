@@ -1,14 +1,15 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BillController;
 use App\Http\Controllers\EmailControllers;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AuthController::class, 'Login']);
-// Route::get('/', function () {
-//     return view('register');
-// });
+Route::get('/bill', function () {
+    return view('bill');
+});
 
 Route::get('/register', [AuthController::class, 'Register']);
 Route::post('/register', [AuthController::class, 'RegisterPost'])->name('register.submit');
@@ -29,4 +30,6 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/flats', [AuthController::class, 'FlatsPost'])->name('flats.submit');
 });
 
- Route::get('/send-email', [EmailControllers::class, 'sendPaymentEmail']);
+Route::get('/send-email', [EmailControllers::class, 'sendPaymentEmail']);
+
+Route::get('/payment/{id}',[BillController::class, 'index']);
