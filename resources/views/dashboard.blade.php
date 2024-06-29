@@ -8,6 +8,9 @@
 @section('content')
     <div class="wrapper">
         <!-- Content Wrapper. Contains page content -->
+        @if (session('message'))
+            <div class="alert alert-success">{{ session('message') }}</div>
+        @endif
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <div class="content-header">
@@ -18,8 +21,8 @@
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Dashboard</li>
+                                <li class="breadcrumb-item">Home</li>
+                                <li class="breadcrumb-item active ">Dashboard</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
@@ -36,12 +39,11 @@
                                     <h3>{{$count}}</h3>
                                     <p>My Flats</p>
                                 </div>
-                                <div class="icon">
-                                    <i class="ion ion-bag"></i>
-                                </div>
+
                                 <a href="{{route('flats')}}" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
+                            <a href="{{route('flats')}}"></a>
                         </div>
                         <!-- ./col -->
                         <div class="col-lg-3 col-6">
@@ -52,9 +54,7 @@
 
                                     <p>Bounce Rate</p>
                                 </div>
-                                <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
-                                </div>
+
                                 <a href="#" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
@@ -68,9 +68,7 @@
 
                                     <p>User Registrations</p>
                                 </div>
-                                <div class="icon">
-                                    <i class="ion ion-person-add"></i>
-                                </div>
+
                                 <a href="#" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
@@ -84,9 +82,6 @@
 
                                     <p>Unique Visitors</p>
                                 </div>
-                                <div class="icon">
-                                    <i class="ion ion-pie-graph"></i>
-                                </div>
                                 <a href="#" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
@@ -97,14 +92,57 @@
                 </div>
             </section>
 
+            <div class="container-fluid m-32">
+                <div class="card shadow col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 m-2 mv-1">
+                    <h4 class="m-2">Send Email</h4>
+                    <div class="table-responsive-col  table-bordered">
+                        <table class="table  table-striped table-hover" slot="">
+                            <thead class="bg-dark text-bg-dark ">
+                                <tr>
+                                    <th>Flat's</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="align-middle">
+                                <tr>
+                                    <td>Flat-A</td>
+                                    <td>panding</td>
+                                    <td>
+                                        <a href="{{route('/send-email/1')}}" class="btn btn-dark btn-sm text-white">Send</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Flat-B</td>
+                                    <td>panding</td>
+                                    <td>
+                                        <a href="{{route('/send-email/2')}}" class="btn btn-dark btn-sm text-white">Send</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Flat-C</td>
+                                    <td>panding</td>
+                                    <td>
+                                        <a href="{{route('/send-email/3')}}" class="btn btn-dark btn-sm text-white">Send</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Flat-D</td>
+                                    <td>panding</td>
+                                    <td>
+                                        <a href="{{route('/send-email/4')}}" class="btn btn-dark btn-sm text-white">Send</a>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
+    </div>
     </div>
     <!-- ./wrapper -->
     {{-- <script>

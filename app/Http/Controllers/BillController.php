@@ -21,9 +21,9 @@ class BillController extends Controller
 
         foreach ($models as $viewVar => $modelClass) {
             $flat = $modelClass::find($id);
-            echo $flat;
+            // echo $flat;
             if ($flat !== null) {
-                return view('bill')->with('flat',$flat);
+                return view('bill')->with('flats',$flat);
             }
         }
 

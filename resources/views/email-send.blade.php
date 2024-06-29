@@ -8,9 +8,6 @@
 @section('content')
     <div class="wrapper">
         <!-- Content Wrapper. Contains page content -->
-        @if (session('message'))
-            <div class="alert alert-success">{{ session('message') }}</div>
-        @endif
         <div class="content-wrapper fixed justify-content-center">
             <!-- Content Header (Page header) -->
             <div class="content-header d-flex justify-content-center">
@@ -19,17 +16,16 @@
 
                     <!-- Form starts here -->
                     <form id="flatSelectionForm" method="POST" action="{{ route('flats.submit') }}" class="form-inline d-flex justify-content-center">
-                        @csrf
+                        {{-- @csrf
                         <div class="form-group mb-2">
                             <label for="flats" class="mr-2">Choose a flat:</label>
                             <select id="flats" name="flats" class="form-control mr-2">
-                                <option>Select</option>
                                 <option value="flata">Flat A</option>
                                 <option value="flatb">Flat B</option>
                                 <option value="flatc">Flat C</option>
                                 <option value="flatd">Flat D</option>
                             </select>
-                        </div>
+                        </div> --}}
                         <button type="submit" class="btn btn-primary mb-2">Submit</button>
                     </form>
                     <!-- Form ends here -->

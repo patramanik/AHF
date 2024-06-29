@@ -9,9 +9,9 @@
         <li class="nav-item d-none d-sm-inline-block">
             <a href="{{ route('dashboard') }}" class="nav-link">Home</a>
         </li>
-        <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Contact</a>
-        </li>
+        {{-- <li class="nav-item d-none d-sm-inline-block btn btn-info">
+            <a href="{{route('flats')}}">Send Email</a>
+        </li> --}}
         <!-- Right navbar links -->
     {{-- <ul class="navbar-nav ml-auto">
         <!-- Logout Button -->
