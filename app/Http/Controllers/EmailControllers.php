@@ -37,6 +37,7 @@ class EmailControllers extends Controller
         elseif($fno== 4){
             $allOwners=$flatDOwners;
         }
+<<<<<<< HEAD
 
         // Combine all owners into one collection
         // $allOwners = $flatAOwners->merge($flatBOwners)->merge($flatCOwners)->merge($flatDOwners);
@@ -68,5 +69,12 @@ class EmailControllers extends Controller
         return redirect('dashboard')->with('message','Emails sent successfully.');
 
         // return response()->json(['message' => 'Emails sent successfully.']);
+=======
+        echo "$respons";
+        $orderId = strtoupper(Str::random(10));
+        dd($orderId);
+
+        return response()->json(['message' => 'Emails sent successfully.']);
+>>>>>>> d026d86c7613df7002e8a7ae4ace663ddf4450af
     }
 }
