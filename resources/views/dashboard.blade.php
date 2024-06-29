@@ -107,28 +107,28 @@
                             <tbody class="align-middle">
                                 <tr>
                                     <td>Flat-A</td>
-                                    <td>panding</td>
+                                    <td>pending</td>
                                     <td>
                                         <a href="{{route('/send-email/1')}}" class="btn btn-dark btn-sm text-white">Send</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Flat-B</td>
-                                    <td>panding</td>
+                                    <td>pending</td>
                                     <td>
                                         <a href="{{route('/send-email/2')}}" class="btn btn-dark btn-sm text-white">Send</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Flat-C</td>
-                                    <td>panding</td>
+                                    <td>pending</td>
                                     <td>
                                         <a href="{{route('/send-email/3')}}" class="btn btn-dark btn-sm text-white">Send</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Flat-D</td>
-                                    <td>panding</td>
+                                    <td>pending</td>
                                     <td>
                                         <a href="{{route('/send-email/4')}}" class="btn btn-dark btn-sm text-white">Send</a>
                                     </td>
