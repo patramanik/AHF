@@ -1,5 +1,14 @@
+
+
 @extends('header_link.header')
 @section('space-work')
+@php
+    $monthly_rate = $flats->monthly_rate;
+    $maintenance_charges = $flats->maintenance_charges;
+    $collection_for_major_maintenance = $flats->collection_for_major_maintenance;
+
+    $total = $monthly_rate + $maintenance_charges + $collection_for_major_maintenance;
+@endphp
 <body>
     <div class="container mt-5">
         <div class="card">
@@ -17,37 +26,44 @@
                     </div>
                     <div class="col text-right">
                         <h5>To:</h5>
-                        <p>Flat No: {{$flat->flat_no}}</p>
-                        <p>Name: {{$flat->owner_name}}</p>
-                        <p>Email: {{$flat->email}}</p>
+                       <p>Flat No: {{$flats->flat_no}}</p>
+                         <p>Name: {{$flats->owner_name}}</p>
+                        <p>Email: {{$flats->email}}</p>
                     </div>
                 </div>
                 <table class="table table-bordered">
                     <thead class="thead-light">
                         <tr>
-                            <th>Description</th>
-                            <th>Quantity</th>
-                            <th>Unit Price</th>
-                            <th>Total</th>
+                            <th><strong>Description</strong></th>
+                            <th><strong>Total</strong></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Service/Product 1</td>
-                            <td>2</td>
-                            <td>$100</td>
-                            <td>$200</td>
+                            <td><strong>Monthly rate</strong></td>
+                            <td>{{ $flats->monthly_rate }}</td>
                         </tr>
                         <tr>
-                            <td>Service/Product 2</td>
-                            <td>1</td>
-                            <td>$150</td>
-                            <td>$150</td>
+                            <td><strong>Maintenance charges</strong></td>
+
+                            <td>{{ $flats->maintenance_charges }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Collection for major maintenance</strong></td>
+
+                            <td>{{ $flats->collection_for_major_maintenance }}</td>
+                        </tr>
+                        <tr style="background-color:#D3D3D3">
+
+
+                            <td><strong>Total</strong></td>
+
+                            <td>{{ $total }}</td>
                         </tr>
                         <!-- Add more items as needed -->
                     </tbody>
                 </table>
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-8"></div>
                     <div class="col-4">
                         <table class="table table-bordered">
@@ -65,9 +81,25 @@
                             </tr>
                         </table>
                     </div>
-                </div>
+                </div> --}}
                 <div class="text-center mt-3">
-                    <p>Thank you for your business!</p>
+
+                    <div>
+                        <button onclick="pay()">Pay</button>
+                        <button onclick="cancel()">Cancel</button>
+                    </div>
+
+                    <script>
+                    function pay() {
+                        alert("Proceed to payment");
+                        // Implement payment logic here
+                    }
+
+                    function cancel() {
+                        alert("Cancel operation");
+                        // Implement cancel logic here
+                    }
+                    </script>
                 </div>
             </div>
         </div>

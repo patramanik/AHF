@@ -7,9 +7,9 @@ use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AuthController::class, 'Login']);
-Route::get('/bill', function () {
-    return view('bill');
-});
+// Route::get('/bill', function () {
+//     return view('bill');
+// });
 
 Route::get('/register', [AuthController::class, 'Register']);
 Route::post('/register', [AuthController::class, 'RegisterPost'])->name('register.submit');

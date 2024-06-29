@@ -32,10 +32,10 @@ class EmailControllers extends Controller
             $subject = 'Payment Link: ' . $paymentLink;
            $respons= Mail::to($owner->email)->send(new PaymentLinkEmail($sendMessage, $subject));
         }
-
+        echo "$respons";
         $orderId = strtoupper(Str::random(10));
+        dd($orderId);
 
-        // dd($respons);
-        // return response()->json(['message' => 'Emails sent successfully.']);
+        return response()->json(['message' => 'Emails sent successfully.']);
     }
 }
