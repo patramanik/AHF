@@ -15,41 +15,6 @@ use Carbon\Carbon;
 
 class EmailControllers extends Controller
 {
-    public function sendPaymentEmail()
-    {
-        // $sendMessage = 'Welcome to AHF';
-        $subject = 'Welcome to AHF';
-
-
-        // Send the email to each owner and save bill data to database
-        foreach ($allOwners as $owner) {
-            $paymentLink = url('/payment/' . $owner->id); // Generate payment link using flat_no
-            $sendMessage = 'Payment Link: ' . $paymentLink;
-            $OrderId = mt_rand(1000000000, 9999999999);
-            $billOrderId = 'OD' . $OrderId; // Generate random bill order ID
-            $billDate = Carbon::now()->toDateString(); // Current date
-            $billTime = Carbon::now()->toTimeString(); // Current time
-
-            // Send email
-            Mail::to($owner->email)->send(new PaymentLinkEmail($sendMessage, $subject));
-
-            // Save to database
-            DB::table('billreport')->update([
-                'flat_no' => $owner->flat_no,
-                'billdate' => $billDate,
-                'billtime' => $billTime,
-                'billorderid' => $billOrderId,
-                'billsentstatus' => true, // Assuming email sending is successful
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ]);
-        }
-
-        return redirect('dashboard')->with('message', 'Emails sent successfully.');
-
-        // return response()->json(['message' => 'Emails sent successfully.']);
-
-    }
     public function sendEmailA()
     {
 
