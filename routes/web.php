@@ -30,9 +30,9 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/flats', [AuthController::class, 'FlatsPost'])->name('flats.submit');
 });
 
-Route::get('/send-email/1', [EmailControllers::class, 'sendPaymentEmail'])->name('sendPaymentEmail');
-Route::get('/send-email/2', [EmailControllers::class, 'sendPaymentEmail']);
-Route::get('/send-email/3', [EmailControllers::class, 'sendPaymentEmail']);
-Route::get('/send-email/4', [EmailControllers::class, 'sendPaymentEmail']);
+Route::get('/send-email-a', [EmailControllers::class, 'sendPaymentEmail'])->name('sendEmailA');
+Route::get('/send-email-b', [EmailControllers::class, 'sendPaymentEmail'])->name('sendEmailB');
+Route::get('/send-email-c', [EmailControllers::class, 'sendPaymentEmail'])->name('sendEmailC');
+Route::get('/send-email-d', [EmailControllers::class, 'sendPaymentEmail'])->name('sendEmailD');
 
 Route::get('/payment/{id}',[BillController::class, 'index']);
