@@ -23,15 +23,14 @@ class EmailControllers extends Controller
         foreach ($flatAOwners as $owner) {
             $paymentLink = url('/payment/' . $owner->id); // Generate payment link
             $sendMessage = 'Payment Link: ' . $paymentLink;
-            $orderId = mt_rand(1000000000, 9999999999);
-            $billOrderId = 'OD' . $orderId; // Generate random bill order ID
+            $billOrderId = 'OD' . time() . mt_rand(1000, 9999);// Generate random bill order ID
             $billDate = Carbon::now()->toDateString(); // Current date
             $billTime = Carbon::now()->toTimeString(); // Current time
 
             $billData = [
                 'flat_no' => $owner->flat_no,
-                'billdate' => $billDate,
-                'billtime' => $billTime,
+                'bill_send_date' => $billDate,
+                'bill_send_time' => $billTime,
                 'billorderid' => $billOrderId,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
@@ -68,8 +67,7 @@ class EmailControllers extends Controller
         foreach ($flatBOwners as $owner) {
             $paymentLink = url('/payment/' . $owner->id); // Generate payment link
             $sendMessage = 'Payment Link: ' . $paymentLink;
-            $orderId = mt_rand(1000000000, 9999999999);
-            $billOrderId = 'OD' . $orderId; // Generate random bill order ID
+            $billOrderId = 'OD' . time() . mt_rand(1000, 9999); // Generate random bill order ID
             $billDate = Carbon::now()->toDateString(); // Current date
             $billTime = Carbon::now()->toTimeString(); // Current time
 
@@ -112,8 +110,7 @@ class EmailControllers extends Controller
         foreach ($flatCOwners as $owner) {
             $paymentLink = url('/payment/' . $owner->id); // Generate payment link
             $sendMessage = 'Payment Link: ' . $paymentLink;
-            $orderId = mt_rand(1000000000, 9999999999);
-            $billOrderId = 'OD' . $orderId; // Generate random bill order ID
+            $billOrderId = 'OD' . time() . mt_rand(1000, 9999);
             $billDate = Carbon::now()->toDateString(); // Current date
             $billTime = Carbon::now()->toTimeString(); // Current time
 
@@ -157,8 +154,7 @@ class EmailControllers extends Controller
         foreach ($flatDOwners as $owner) {
             $paymentLink = url('/payment/' . $owner->id); // Generate payment link
             $sendMessage = 'Payment Link: ' . $paymentLink;
-            $orderId = mt_rand(1000000000, 9999999999);
-            $billOrderId = 'OD' . $orderId; // Generate random bill order ID
+            $billOrderId = 'OD' . time() . mt_rand(1000, 9999); // Generate random bill order ID
             $billDate = Carbon::now()->toDateString(); // Current date
             $billTime = Carbon::now()->toTimeString(); // Current time
 

@@ -7,16 +7,18 @@
 
 @section('content')
 
-    {{-- @if (session('message'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{ session('message') }}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
+    @if (session('message'))
+        <div class="col-6 my-1 d-flex justify-content-end">
+            <div class="alert alert-success alert-dismissible fade show alert-sm" role="alert">
+                {{ session('message') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
         </div>
-    @endif --}}
+    @endif
 
-    
+
 
     <div class="wrapper">
         <!-- Content Wrapper. Contains page content -->
@@ -52,19 +54,19 @@
                                 <a href="{{ route('flats') }}" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
-                            <a href="{{ route('flats') }}"></a>
+                            {{-- <a href="{{ route('flats') }}"></a> --}}
                         </div>
                         <!-- ./col -->
                         <div class="col-lg-3 col-6">
                             <!-- small box -->
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                    <h3>53<sup style="font-size: 20px">%</sup></h3>
+                                    <h3>{{$billdata}}</h3>
 
-                                    <p>Bounce Rate</p>
+                                    <p>Send Email List's</p>
                                 </div>
 
-                                <a href="#" class="small-box-footer">More info <i
+                                <a href="{{ route('emailSendPage') }}" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -109,35 +111,35 @@
                             <thead class="bg-dark text-bg-dark ">
                                 <tr>
                                     <th>Flat's</th>
-                                    <th>Status</th>
+                                    {{-- <th>Status</th> --}}
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody class="align-middle">
                                 <tr>
                                     <td>Flat-A</td>
-                                    <td>pending</td>
+                                    {{-- <td>pending</td> --}}
                                     <td>
                                         <a href="{{ route('sendEmailA') }}" class="btn btn-dark btn-sm text-white">Send</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Flat-B</td>
-                                    <td>pending</td>
+                                    {{-- <td>pending</td> --}}
                                     <td>
                                         <a href="{{ route('sendEmailB') }}" class="btn btn-dark btn-sm text-white">Send</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Flat-C</td>
-                                    <td>pending</td>
+                                    {{-- <td>pending</td> --}}
                                     <td>
                                         <a href="{{ route('sendEmailC') }}" class="btn btn-dark btn-sm text-white">Send</a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Flat-D</td>
-                                    <td>pending</td>
+                                    {{-- <td>pending</td> --}}
                                     <td>
                                         <a href="{{ route('sendEmailD') }}" class="btn btn-dark btn-sm text-white">Send</a>
                                     </td>

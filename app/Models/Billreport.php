@@ -13,8 +13,11 @@ class Billreport extends Model
     protected $fillable = [
         'id',
         'flat_no',
+        'bill_pament_status',
         'billdate',
         'billtime',
+        'bill_send_date',
+        'bill_send_time',
         'billorderid',
         'billsentstatus',
         'created_at',

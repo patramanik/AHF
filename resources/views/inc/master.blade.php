@@ -31,10 +31,11 @@
     <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
     <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    @notifyCss
 </head>
 
 <body>
+    <x-notify::notify />
     @include('components.navbar')
     <div id="layoutSidenav">
         @include('components.sidbar')
@@ -78,6 +79,7 @@
     {{-- <script src="dist/js/demo.js"></script> --}}
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     {{-- <script src="dist/js/pages/dashboard.js"></script> --}}
+    @notifyJs
 </body>
 
 </html>

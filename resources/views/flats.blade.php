@@ -3,7 +3,7 @@
 @endphp
 
 @extends('inc.master')
-@section('title', 'Dashboard')
+@section('title', 'Flats')
 
 @section('content')
     <div class="wrapper">

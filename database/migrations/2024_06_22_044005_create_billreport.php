@@ -14,10 +14,13 @@ return new class extends Migration
         Schema::create('billreport', function (Blueprint $table) {
             $table->id();
             $table->string('flat_no');
-            $table->date('billdate');
-            $table->time('billtime');
-            $table->string('billorderid');
-            $table->boolean('billsentstatus');
+            $table->string('billorderid')->unique();
+            $table->boolean('bill_pament_status')->default(false);
+            $table->date('billdate')->nullable();
+            $table->time('billtime')->nullable();
+            $table->date('bill_send_date');
+            $table->time('bill_send_time');
+            $table->boolean('billsentstatus')->default(false);
             $table->timestamps();
         });
     }
