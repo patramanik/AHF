@@ -4,9 +4,7 @@
 
 @extends('inc.master')
 @section('title', 'Dashboard')
-
 @section('content')
-
     @if (session('message'))
         <div class="col-6 my-1 d-flex justify-content-end">
             <div class="alert alert-success alert-dismissible fade show alert-sm" role="alert">
@@ -28,7 +26,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Dashboard</h1>
+                            <h1 class="m-2">Dashboard</h1>
                         </div><!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -75,17 +73,17 @@
                             <!-- small box -->
                             <div class="small-box bg-warning">
                                 <div class="inner">
-                                    <h3>44</h3>
+                                    <h3>{{$pendingBills}}</h3>
 
-                                    <p>User Registrations</p>
+                                    <p>Pending Bills</p>
                                 </div>
 
-                                <a href="#" class="small-box-footer">More info <i
+                                <a href="{{route('paymentStatus')}}" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                         <!-- ./col -->
-                        <div class="col-lg-3 col-6">
+                        {{-- <div class="col-lg-3 col-6">
                             <!-- small box -->
                             <div class="small-box bg-danger">
                                 <div class="inner">
@@ -96,7 +94,7 @@
                                 <a href="#" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
-                        </div>
+                        </div> --}}
 
                     </div>
 
@@ -156,7 +154,7 @@
     </div>
     </div>
     <!-- ./wrapper -->
-    {{-- <script>
+    <script>
         $.widget.bridge('uibutton', $.ui.button)
-    </script> --}}
+    </script>
 @endsection

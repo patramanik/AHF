@@ -15,15 +15,14 @@ use Carbon\Carbon;
 
 class EmailControllers extends Controller
 {
-    public function sendEmailA()
+    private function sendEmails($flats)
     {
         $subject = 'Welcome to AHF';
-        $flatAOwners = FlatA::select('email', 'id', 'flat_no')->get();
 
-        foreach ($flatAOwners as $owner) {
+        foreach ($flats as $owner) {
             $paymentLink = url('/payment/' . $owner->id); // Generate payment link
             $sendMessage = 'Payment Link: ' . $paymentLink;
-            $billOrderId = 'OD' . time() . mt_rand(1000, 9999);// Generate random bill order ID
+            $billOrderId = 'OD' . time() . mt_rand(1000, 9999); // Generate random bill order ID
             $billDate = Carbon::now()->toDateString(); // Current date
             $billTime = Carbon::now()->toTimeString(); // Current time
 
@@ -54,139 +53,37 @@ class EmailControllers extends Controller
                 $billData
             );
         }
+    }
+
+    public function sendEmailA()
+    {
+        $flatAOwners = FlatA::select('email', 'id', 'flat_no')->get();
+        $this->sendEmails($flatAOwners);
 
         return redirect('dashboard')->with('message', 'Emails sent successfully.');
     }
 
-
     public function sendEmailB()
     {
-        $subject = 'Welcome to AHF';
         $flatBOwners = FlatB::select('email', 'id', 'flat_no')->get();
-
-        foreach ($flatBOwners as $owner) {
-            $paymentLink = url('/payment/' . $owner->id); // Generate payment link
-            $sendMessage = 'Payment Link: ' . $paymentLink;
-            $billOrderId = 'OD' . time() . mt_rand(1000, 9999); // Generate random bill order ID
-            $billDate = Carbon::now()->toDateString(); // Current date
-            $billTime = Carbon::now()->toTimeString(); // Current time
-
-            $billData = [
-                'flat_no' => $owner->flat_no,
-                'billdate' => $billDate,
-                'billtime' => $billTime,
-                'billorderid' => $billOrderId,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ];
-
-            try {
-                // Send email
-                Mail::to($owner->email)->send(new PaymentLinkEmail($sendMessage, $subject));
-
-                // Email sent successfully
-                $billData['billsentstatus'] = true;
-            } catch (\Exception $e) {
-                // Handle the error if email sending fails
-                $billData['billsentstatus'] = false;
-                $billData['error_message'] = $e->getMessage();
-            }
-
-            // Update or insert to database
-            DB::table('billreport')->updateOrInsert(
-                ['flat_no' => $owner->flat_no], // Check existing record by flat_no
-                $billData
-            );
-        }
+        $this->sendEmails($flatBOwners);
 
         return redirect('dashboard')->with('message', 'Emails sent successfully.');
     }
 
     public function sendEmailC()
     {
-        $subject = 'Welcome to AHF';
         $flatCOwners = FlatC::select('email', 'id', 'flat_no')->get();
-
-        foreach ($flatCOwners as $owner) {
-            $paymentLink = url('/payment/' . $owner->id); // Generate payment link
-            $sendMessage = 'Payment Link: ' . $paymentLink;
-            $billOrderId = 'OD' . time() . mt_rand(1000, 9999);
-            $billDate = Carbon::now()->toDateString(); // Current date
-            $billTime = Carbon::now()->toTimeString(); // Current time
-
-            $billData = [
-                'flat_no' => $owner->flat_no,
-                'billdate' => $billDate,
-                'billtime' => $billTime,
-                'billorderid' => $billOrderId,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ];
-
-            try {
-                // Send email
-                Mail::to($owner->email)->send(new PaymentLinkEmail($sendMessage, $subject));
-
-                // Email sent successfully
-                $billData['billsentstatus'] = true;
-            } catch (\Exception $e) {
-                // Handle the error if email sending fails
-                $billData['billsentstatus'] = false;
-                $billData['error_message'] = $e->getMessage();
-            }
-
-            // Update or insert to database
-            DB::table('billreport')->updateOrInsert(
-                ['flat_no' => $owner->flat_no], // Check existing record by flat_no
-                $billData
-            );
-        }
+        $this->sendEmails($flatCOwners);
 
         return redirect('dashboard')->with('message', 'Emails sent successfully.');
     }
-
 
     public function sendEmailD()
     {
-        $subject = 'Welcome to AHF';
         $flatDOwners = FlatD::select('email', 'id', 'flat_no')->get();
-
-        foreach ($flatDOwners as $owner) {
-            $paymentLink = url('/payment/' . $owner->id); // Generate payment link
-            $sendMessage = 'Payment Link: ' . $paymentLink;
-            $billOrderId = 'OD' . time() . mt_rand(1000, 9999); // Generate random bill order ID
-            $billDate = Carbon::now()->toDateString(); // Current date
-            $billTime = Carbon::now()->toTimeString(); // Current time
-
-            $billData = [
-                'flat_no' => $owner->flat_no,
-                'billdate' => $billDate,
-                'billtime' => $billTime,
-                'billorderid' => $billOrderId,
-                'created_at' => Carbon::now(),
-                'updated_at' => Carbon::now(),
-            ];
-
-            try {
-                // Send email
-                Mail::to($owner->email)->send(new PaymentLinkEmail($sendMessage, $subject));
-
-                // Email sent successfully
-                $billData['billsentstatus'] = true;
-            } catch (\Exception $e) {
-                // Handle the error if email sending fails
-                $billData['billsentstatus'] = false;
-                $billData['error_message'] = $e->getMessage();
-            }
-
-            // Update or insert to database
-            DB::table('billreport')->updateOrInsert(
-                ['flat_no' => $owner->flat_no], // Check existing record by flat_no
-                $billData
-            );
-        }
+        $this->sendEmails($flatDOwners);
 
         return redirect('dashboard')->with('message', 'Emails sent successfully.');
     }
-
 }

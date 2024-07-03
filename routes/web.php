@@ -8,9 +8,9 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 
 Route::get('/', [AuthController::class, 'Login']);
-// Route::get('/bill', function () {
-//     return view('bill');
-// });
+Route::get('/pay', function () {
+    return view('chackout');
+});
 
 Route::get('/register', [AuthController::class, 'Register']);
 Route::post('/register', [AuthController::class, 'RegisterPost'])->name('register.submit');
@@ -30,7 +30,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/send-email-d', [EmailControllers::class, 'sendEmailD'])->name('sendEmailD');
 
     Route::get('/email',[DashboardController::class,'sendEmail'])->name('emailSendPage');
-
+    Route::get('/payment-status',[DashboardController::class,'getsendEmaildata'])->name('paymentStatus');
 });
 
 

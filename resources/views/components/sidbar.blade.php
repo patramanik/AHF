@@ -2,13 +2,13 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ route('dashboard') }}" class="brand-link">
-       <h1>AHF</h1>
+        <p class="brand-logo">AHF</p>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- SidebarSearch Form -->
-        <div class="form-inline">
+        <div class="form-inline my-3">
             <div class="input-group" data-widget="sidebar-search">
                 <input class="form-control form-control-sidebar" type="search" placeholder="Search"
                     aria-label="Search">
@@ -29,36 +29,29 @@
 
                 <li class="nav-header">SERVICES</li>
                 <li class="nav-item">
-                    <a href="pages/gallery.html" class="nav-link">
-                        {{-- <i class="nav-icon far fa-home"></i> --}}
+                    <a href="{{route('flats')}}" class="nav-link">
                         <p>
                             Flates
                         </p>
                     </a>
                 </li>
-                {{-- <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-book"></i>
+                <li class="nav-item">
+                    <a href="{{route('emailSendPage')}}" class="nav-link">
                         <p>
-                            Pages
-                            <i class="fas fa-angle-left right"></i>
+                            Send Email Status
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far  fa-file-invoice nav-icon"></i>
-                                <p>Invoice</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pages/examples/profile.html" class="nav-link">
-                                <i class="far fa-solid fa-file-invoice nav-icon"></i>
-                                <p>Profile</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li> --}}
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{route('paymentStatus')}}" class="nav-link">
+                        <p>
+                            Payment Status
+                        </p>
+                    </a>
+                </li>
+
+
 
             </ul>
         </nav>

@@ -32,6 +32,18 @@
     <link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     @notifyCss
+    <style>
+        .brand-logo {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 200px !important;
+        height: 50px !important;
+        font-size: 24px !important;
+        color: #fff !important; 
+    }
+    </style>
+
 </head>
 
 <body>

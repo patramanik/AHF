@@ -6,12 +6,12 @@
 @section('title', 'Flats')
 
 @section('content')
-    <div class="wrapper">
+    <div class="wrapper wrapper col-12">
         <!-- Content Wrapper. Contains page content -->
         @if (session('message'))
             <div class="alert alert-success">{{ session('message') }}</div>
         @endif
-        <div class="content-wrapper fixed justify-content-center">
+        <div class="content-wrapper justify-content-center">
             <!-- Content Header (Page header) -->
             <div class="content-header d-flex justify-content-center">
                 <div class="container text-center">
@@ -30,7 +30,7 @@
                                 <option value="flatd">Flat D</option>
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                        <button type="submit" class="btn btn-outline-primary mb-2">Submit</button>
                     </form>
                     <!-- Form ends here -->
                 </div>

@@ -22,10 +22,14 @@ class DashboardController extends Controller
         $count= $flatA+$flatB+$flatC+$flatD;
 
         $billdata=Billreport::count();
+        // $pendingBills = Billreport::where('status', 0)->count();
+        $pendingPayment = Billreport::where('bill_pament_status', 0)->count();
+
 
         return view('dashboard', [
             'count' => $count,
-            'billdata' => $billdata
+            'billdata' => $billdata,
+            'pendingBills' => $pendingPayment
         ]);
     }
 
@@ -39,7 +43,13 @@ class DashboardController extends Controller
 
         $data = Billreport::all();
 
-        return view('', ['data' => $data]);
+        return view('paydingPay', ['data' => $data]);
     }
 
+    public function paymentData(){
+
+        $data = Billreport::all();
+
+        return view('', ['data' => $data]);
+    }
 }

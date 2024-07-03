@@ -1,4 +1,5 @@
-@extends('header_link.header')
+@extends('inc.header')
+@section('title', 'LogIn')
 @section('space-work')
 
 <body class="hold-transition login-page" style="background: linear-gradient(to right, #6a11cb, #2575fc);">
